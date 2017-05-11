@@ -25,9 +25,9 @@ public class GooglePlay
      */
     public int getNumeroUsuarios()
     {
-      int numeroDeUsuarios = 0;
-      numeroDeUsuarios = Usuarios.size();
-        
+        int numeroDeUsuarios = 0;
+        numeroDeUsuarios = Usuarios.size();
+
         return numeroDeUsuarios;
     }
 
@@ -38,7 +38,6 @@ public class GooglePlay
     {
         Usuarios.add(usuarioAAniadir);
     }
-    
 
     /**
      * Metodo qeu nos permite añadir un producto a nuesta tienda
@@ -48,17 +47,49 @@ public class GooglePlay
         Productos.add(productoAAniadir);
     }
 
-    
     /**
      * Meotodo que nos devuelde el numero de productos que hay en nuestra tienda
      */
     public int getNumeroProductos()
     {
-      int numeroDeProductos = 0;
-      numeroDeProductos = Productos.size();
-        
+        int numeroDeProductos = 0;
+        numeroDeProductos = Productos.size();
+
         return numeroDeProductos;
+
+    }
+
+    public int comprar(String usuarioQueCompra, String productoAComprar)
+    {
+        int importeCompra = -1;
+        boolean usuario = false;
+        boolean producto = false;
+         boolean buscando = true;
         
+        for (int contador = 0; contador < Usuarios.size(); contador++)
+        {
+            if (Usuarios.get(contador).getNombreCuenta() == usuarioQueCompra && buscando)
+            {
+                usuario = true;
+                buscando = false;
+                
+            }
+        }
+        
+        for (int contador = 0; contador < Productos.size(); contador++)
+        {
+            if(Productos.get(contador).getNombreProducto() == productoAComprar && buscando)
+            {
+                 producto = true;
+                 buscando = false;
+            }
+        }
+        return importeCompra;
+       
+        
+    
+
+    
     }
 
 }

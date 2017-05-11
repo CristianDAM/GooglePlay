@@ -14,9 +14,9 @@ public class Pelicula extends ProductoMultimedia
     /**
      * Constructor for objects of class Pelicula
      */
-    public Pelicula(String titulo, int anio, int duracion, int calidad)
+    public Pelicula(String nombre, int anio, int duracion, int calidad)
     {
-       super(titulo, anio);
+       super(nombre, anio);
         this.duracion = duracion;
         if (calidad == 1080 || calidad == 480){ 
             this.calidad = calidad;
@@ -45,6 +45,26 @@ public class Pelicula extends ProductoMultimedia
             calidadPelicula = "HD";
         }
         return calidadPelicula;
+    }
+    
+    @Override
+    public double getPrecio()
+    {
+        double precio = 0;
+
+        if(calidad == 1080 ){
+            precio = 10;
+            if(getAno() < 2000){
+                precio = precio - (precio * 0.5);
+            }
+        }
+        else if (calidad == 480){
+            precio = 5;
+            if(getAno() < 2000){
+                precio = precio - (precio * 0.5);
+            }
+        }
+        return precio;
     }
 
 }

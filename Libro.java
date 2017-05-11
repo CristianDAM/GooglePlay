@@ -14,9 +14,9 @@ public class Libro extends ProductoMultimedia
     /**
      * Constructor for objects of class Libro
      */
-    public Libro(String titulo, int anio, int numeroPaginas, boolean cienciaFiccion)
+    public Libro(String nombre, int anio, int numeroPaginas, boolean cienciaFiccion)
     {
-        super(titulo, anio);
+        super(nombre, anio);
         this.numeroPaginas = numeroPaginas;
         this.cienciaFiccion = cienciaFiccion;
 
@@ -37,5 +37,12 @@ public class Libro extends ProductoMultimedia
     public boolean getFiccion()
     {
         return cienciaFiccion;
+    }
+    
+    public double getPrecio()
+    {
+        double precio = 0.0;
+        return precio;
+        
     }
 }

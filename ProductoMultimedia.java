@@ -5,31 +5,26 @@
  * @author (Cristian) 
  * @version (a version number or a date)
  */
-public class ProductoMultimedia extends Producto
+public  abstract class ProductoMultimedia extends Producto
 {
-    private String titulo;
+   
     private int anio;
+    
 
 
     /**
      * Constructor for objects of class Producto
      */
-    public ProductoMultimedia(String titulo, int anio)
+    public ProductoMultimedia(String nombre, int anio)
     {
+        super(nombre);
      
-        this.titulo = titulo;
         this.anio = anio;
      
 
     }
     
-    /**
-     * Metodo que devuelve el nombre de nuestro producto multimedia
-     */
-     public String getTitulo()
-    {
-        return titulo;
-    }
+   
 
     /**
      * Metodo que devuelve el año de creacon de nuestro producto multimedia

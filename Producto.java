@@ -7,17 +7,30 @@
  */
 public abstract class Producto
 {
+    private String nombre;
     private int numeroVecesVendido; 
-   
+
     private static final   int NUMERO_VECES_VENDIDO = 0;
 
     /**
      * Constructor for objects of class Producto
      */
-    public Producto()
+    public Producto(String nombre)
     {
-       numeroVecesVendido = NUMERO_VECES_VENDIDO;
+        this.nombre = nombre;
+        numeroVecesVendido = NUMERO_VECES_VENDIDO;
     }
 
-   
+    /**
+     * Metodo que devuelve el nombre del producto
+     */
+    public String getNombreProducto()
+    {
+        return nombre;
+    }
+    
+    /**
+     * Metodo abstracto de Producto
+     */
+    public abstract double getPrecio();
 }

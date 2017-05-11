@@ -7,7 +7,7 @@
  */
 public class Aplicacion extends Producto
 {
-    private String nombreAplicacion;
+ 
     private double espacioAplicacion;
     private Categoria tipoAplicacion;
 
@@ -16,20 +16,14 @@ public class Aplicacion extends Producto
      */
     public Aplicacion( String nombre, double espacio, Categoria tipo)
     {
+        super(nombre);
      
-        nombreAplicacion = nombre;
         espacioAplicacion = espacio;
         tipoAplicacion = tipo;
 
     }
     
-    /**
-     * Metodo que devuelde el nombre dla aplicacion
-     */
-    public String getNombre()
-    {
-        return nombreAplicacion;
-    }
+  
 
     /**
      * Metodo que devuelde el espacio en MB que ocupa nuestra aplicacion
@@ -61,6 +55,13 @@ public class Aplicacion extends Producto
         }
         return nombreCategoria;
 
+    }
+    
+    @Override
+    public double getPrecio()
+    {
+        double precio = 0.99;
+        return precio;
     }
 
 }
